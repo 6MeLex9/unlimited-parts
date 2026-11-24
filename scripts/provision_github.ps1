@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Разворачивает рабочую область гибкого планирования в GitHub
     (аналог Azure DevOps Demo Generator для шаблона "Parts Unlimited").

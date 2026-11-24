@@ -1,4 +1,4 @@
-﻿# Unlimited Parts — тестовые данные и гибкое планирование (GitHub-версия)
+# Unlimited Parts — тестовые данные и гибкое планирование (GitHub-версия)
 
 Репозиторий содержит «тестовое окружение» для лабораторных работ по программной инженерии:
 набор данных магазина автозапчастей **Parts Unlimited** (продукты, категории, заказы, корзина)
@@ -20,8 +20,10 @@ Milestones (спринты) и доска **Projects**.
 | `data/Order*.json`, `data/Cart.json` | Заказы, позиции заказов, корзина |
 | `data/sql/*.sql` | Те же данные в виде DDL/INSERT для SQL Server / SQLite |
 | `data/workitems/*.md` | Готовые тексты рабочих элементов (Epic → Feature → PBI → Bug) |
-| `data/demo-generator/` | Аналог манифеста Azure DevOps Demo Generator (`parts-unlimited.json`) |
-| `docs/` | Отчёт по работе, карта соответствия Azure → GitHub, скриншоты |
+| `data/demo-generator/` | Аналог манифеста Azure DevOps Demo Generator (`parts-unlimited.json`), правила доски ЛР 2.1 (`lab2.1-board.json`) |
+| `tools/lab21/` | Автоматизация ЛР 2.1: задачи, поля доски, состояние, поле `PUL Ticket ID` |
+| `scripts/check_wip.ps1` | Проверка WIP-лимита «Approved QA» и ёмкости спринта |
+| `docs/` | Отчёты по работам, карта соответствия Azure → GitHub |
 | `src/` | Минимальная модель данных (C#), совпадающая со схемой JSON/SQL |
 
 ## Быстрый старт (как в демо-генераторе, только без Azure)
@@ -43,7 +45,15 @@ python tools/validate_data.py
 | Спринты | **Milestones**: `Sprint 1`, `Sprint 2`, `Sprint 3` |
 | Область (аналог Area Path) | Label `area: PUL-Web` |
 | Типы рабочих элементов | Labels `type: epic`, `type: feature`, `type: pbi`, `type: bug` |
-| Иерархия | **Sub-issues** эпик → feature → PBI |
+| Иерархия | **Sub-issues** эпик → feature → PBI → task |
+| Поля доски ЛР 2.1 | `Board Column`, `Swimlane`, `Activity`, `Remaining Work`, `Story Points`, `PUL Ticket ID` |
+
+## Лабораторные работы
+
+| ЛР | Тема | Отчёт |
+| --- | --- | --- |
+| 2.0 | Подготовка тестовых данных | [`docs/report.md`](docs/report.md) |
+| 2.1 | Гибкое планирование и управление портфелем | [`docs/lab2.1-report.md`](docs/lab2.1-report.md) · [`guide`](docs/lab2.1-guide.md) · [`board rules`](docs/lab2.1-board-rules.md) · [`dashboards`](docs/lab2.1-dashboards.md) · [`process`](docs/lab2.1-process.md) |
 
 ## Отчёт
 

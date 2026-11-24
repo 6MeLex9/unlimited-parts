@@ -1,0 +1,21 @@
+{
+  "$comment": "Снимок состояния доски для офлайн-проверки WIP и ёмкости (scripts/check_wip.ps1). Соответствует текущему состоянию Project v2.",
+  "capturedAt": "2026-11-24",
+  "project": "https://github.com/users/6MeLex9/projects/2",
+  "items": [
+    { "number": 1, "title": "[EPIC] Обучение продуктам", "type": "Epic", "boardColumn": "New", "status": "Todo", "assigned": false, "remainingWork": 0, "swimlane": "Default" },
+    { "number": 2, "title": "Осваиваем дашборды", "type": "Feature", "boardColumn": "New", "status": "Todo", "assigned": false, "remainingWork": 0, "swimlane": "Default" },
+    { "number": 3, "title": "Как клиент, я хочу просмотреть новые учебники", "type": "PBI", "boardColumn": "Committed", "status": "In Progress", "assigned": false, "remainingWork": 0, "swimlane": "Default", "ticketId": "PUL-1042" },
+    { "number": 4, "title": "Как клиент, я хочу видеть новинки на главной странице", "type": "PBI", "boardColumn": "New", "status": "Todo", "assigned": false, "remainingWork": 0, "swimlane": "Default" },
+    { "number": 5, "title": "Как клиент, я хочу добавить товар в корзину", "type": "PBI", "boardColumn": "Approved", "status": "In Progress", "assigned": false, "remainingWork": 0, "swimlane": "Default" },
+    { "number": 6, "title": "Карточка товара не отображает скидку", "type": "Bug", "boardColumn": "New", "status": "Todo", "assigned": false, "remainingWork": 0, "swimlane": "Default" },
+    { "number": 15, "title": "Добавить страницу для самых последних учебников", "type": "Task", "boardColumn": "Committed", "status": "In Progress", "assigned": true, "activity": "Development", "remainingWork": 8, "swimlane": "Default" },
+    { "number": 16, "title": "Оптимизация запроса к данным для последних учебников", "type": "Task", "boardColumn": "Committed", "status": "In Progress", "assigned": false, "activity": "Design", "remainingWork": 3, "swimlane": "Default" },
+    { "number": 17, "title": "Как клиент, я хочу видеть недавно просмотренные учебники", "type": "PBI", "boardColumn": "Approved QA", "status": "In Progress", "assigned": false, "remainingWork": 0, "swimlane": "Ускоренная", "ticketId": "PUL-1043" },
+    { "number": 18, "title": "Как клиент, я хочу запросить новые материалы", "type": "PBI", "boardColumn": "Done", "status": "Done", "assigned": false, "remainingWork": 0, "swimlane": "Default" },
+    { "number": 11, "title": "Администрирование каталога", "type": "Feature", "boardColumn": "Done", "status": "Done", "assigned": false, "remainingWork": 0, "swimlane": "Default" },
+    { "number": 12, "title": "Как администратор, я хочу добавить товар в каталог", "type": "PBI", "boardColumn": "Done", "status": "Done", "assigned": false, "remainingWork": 0, "swimlane": "Default" },
+    { "number": 13, "title": "Как администратор, я хочу скрыть снятый с продажи товар", "type": "PBI", "boardColumn": "Done", "status": "Done", "assigned": false, "remainingWork": 0, "swimlane": "Default" },
+    { "number": 14, "title": "Как администратор, я хочу управлять категориями каталога", "type": "PBI", "boardColumn": "Done", "status": "Done", "assigned": false, "remainingWork": 0, "swimlane": "Default" }
+  ]
+}
