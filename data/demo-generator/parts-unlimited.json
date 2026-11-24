@@ -1,0 +1,83 @@
+{
+  "$comment": "Аналог манифеста Azure DevOps Demo Generator (шаблон 'Parts Unlimited' / 3 | Parts Unlimited). Описывает, из чего состоит проект: код, рабочие элементы, итерации, метки. Используется как спецификация для scripts/provision_github.ps1.",
+  "template": {
+    "id": "parts-unlimited",
+    "name": "Parts Unlimited",
+    "source": "https://github.com/microsoft/AzDevOpsDemoGenerator",
+    "azureTemplateOption": "3 | Parts Unlimited",
+    "githubUrl": "https://github.com/microsoft/PartsUnlimited"
+  },
+  "project": {
+    "name": "Unlimited Parts",
+    "repository": "unlimited-parts",
+    "description": "Учебный проект: тестовые данные и гибкое планирование в GitHub Projects"
+  },
+  "team": {
+    "name": "PUL-Web",
+    "areaPath": "UnlimitedParts\\Web",
+    "labels": ["area: PUL-Web"]
+  },
+  "iterations": {
+    "field": "Milestone",
+    "lengthInDays": 14,
+    "items": [
+      { "name": "Sprint 1", "offsetWeeks": -2, "isCurrent": false },
+      { "name": "Sprint 2", "offsetWeeks": -1, "isCurrent": true },
+      { "name": "Sprint 3", "offsetWeeks": 1, "isCurrent": false }
+    ]
+  },
+  "workItemTypes": [
+    { "type": "Epic", "label": "type: epic", "color": "#6E2594" },
+    { "type": "Feature", "label": "type: feature", "color": "#0075CA" },
+    { "type": "Product Backlog Item", "label": "type: pbi", "color": "#0E8A16" },
+    { "type": "Bug", "label": "type: bug", "color": "#D73A4A" }
+  ],
+  "seedData": {
+    "generator": "tools/generate_seed_data.js",
+    "files": [
+      "data/Category.json",
+      "data/Product.json",
+      "data/Customer.json",
+      "data/Order.json",
+      "data/OrderItem.json",
+      "data/Cart.json"
+    ],
+    "sql": ["data/sql/01_schema.sql", "data/sql/02_seed_data.sql"],
+    "expectedCounts": {
+      "categories": 20,
+      "products": 43,
+      "customers": 40,
+      "orders": 120,
+      "orderItems": 301,
+      "cartLines": 12
+    }
+  },
+  "workItems": [
+    { "file": "data/workitems/epic-01-obuchenie-produktam.md", "type": "Epic", "title": "[EPIC] Обучение продуктам", "parent": null, "milestone": null },
+    { "file": "data/workitems/feature-02-dashboards.md", "type": "Feature", "title": "Осваиваем дашборды", "parent": "epic-01", "milestone": "Sprint 2" },
+    { "file": "data/workitems/pbi-03-novye-uchebniki.md", "type": "PBI", "title": "Как клиент, я хочу просмотреть новые учебники", "parent": "feature-02", "milestone": "Sprint 2" },
+    { "file": "data/workitems/pbi-04-novinki.md", "type": "PBI", "title": "Как клиент, я хочу видеть новинки на главной странице", "parent": "feature-02", "milestone": "Sprint 2" },
+    { "file": "data/workitems/pbi-05-korzina.md", "type": "PBI", "title": "Как клиент, я хочу добавить товар в корзину", "parent": "feature-02", "milestone": "Sprint 2" },
+    { "file": "data/workitems/bug-06-skidka.md", "type": "Bug", "title": "Карточка товара не отображает скидку", "parent": "feature-02", "milestone": "Sprint 2" },
+    { "file": "data/workitems/feature-07-oformlenie-zakaza.md", "type": "Feature", "title": "Оформление заказа", "parent": "epic-01", "milestone": "Sprint 3" },
+    { "file": "data/workitems/pbi-08-oformit-zakaz.md", "type": "PBI", "title": "Как клиент, я хочу оформить заказ", "parent": "feature-07", "milestone": "Sprint 3" },
+    { "file": "data/workitems/pbi-09-oplata.md", "type": "PBI", "title": "Как клиент, я хочу оплатить заказ картой", "parent": "feature-07", "milestone": "Sprint 3" },
+    { "file": "data/workitems/pbi-10-status.md", "type": "PBI", "title": "Как клиент, я хочу отслеживать статус заказа", "parent": "feature-07", "milestone": "Sprint 3" },
+    { "file": "data/workitems/feature-11-admin.md", "type": "Feature", "title": "Администрирование каталога", "parent": "epic-01", "milestone": "Sprint 1" },
+    { "file": "data/workitems/pbi-12-dobavit-tovar.md", "type": "PBI", "title": "Как администратор, я хочу добавить товар в каталог", "parent": "feature-11", "milestone": "Sprint 1" },
+    { "file": "data/workitems/pbi-13-skryt-tovar.md", "type": "PBI", "title": "Как администратор, я хочу скрыть снятый с продажи товар", "parent": "feature-11", "milestone": "Sprint 1" },
+    { "file": "data/workitems/pbi-14-kategorii.md", "type": "PBI", "title": "Как администратор, я хочу управлять категориями каталога", "parent": "feature-11", "milestone": "Sprint 1" }
+  ],
+  "boards": [
+    {
+      "name": "Unlimited Parts Board",
+      "template": "board",
+      "columns": ["Todo", "In Progress", "Done"],
+      "views": [
+        { "name": "Board", "layout": "board", "groupBy": "Status" },
+        { "name": "By Sprint", "layout": "table", "groupBy": "Milestone" },
+        { "name": "Roadmap", "layout": "roadmap" }
+      ]
+    }
+  ]
+}

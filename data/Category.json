@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 1,
+    "Name": "Brakes",
+    "Description": "Тормозные колодки, диски и суппорты",
+    "ParentCategoryId": null
+  },
+  {
+    "Id": 2,
+    "Name": "Brakes - Disc",
+    "Description": "Тормозные диски",
+    "ParentCategoryId": 1
+  },
+  {
+    "Id": 3,
+    "Name": "Brakes - Pads",
+    "Description": "Тормозные колодки",
+    "ParentCategoryId": 1
+  },
+  {
+    "Id": 4,
+    "Name": "Chains",
+    "Description": "Цепи, звёзды и натяжители",
+    "ParentCategoryId": null
+  },
+  {
+    "Id": 5,
+    "Name": "Chains - Chains",
+    "Description": "Велосипедные цепи",
+    "ParentCategoryId": 4
+  },
+  {
+    "Id": 6,
+    "Name": "Lighting",
+    "Description": "Освещение",
+    "ParentCategoryId": null
+  },
+  {
+    "Id": 7,
+    "Name": "Lighting - Headlights",
+    "Description": "Фары и лампы",
+    "ParentCategoryId": 6
+  },
+  {
+    "Id": 8,
+    "Name": "Lighting - Tail Lights",
+    "Description": "Задние фонари",
+    "ParentCategoryId": 6
+  },
+  {
+    "Id": 9,
+    "Name": "Wheels",
+    "Description": "Колёса и покрышки",
+    "ParentCategoryId": null
+  },
+  {
+    "Id": 10,
+    "Name": "Wheels - Tires",
+    "Description": "Покрышки",
+    "ParentCategoryId": 9
+  },
+  {
+    "Id": 11,
+    "Name": "Wheels - Rims",
+    "Description": "Ободья и колёсные наборы",
+    "ParentCategoryId": 9
+  },
+  {
+    "Id": 12,
+    "Name": "Steering",
+    "Description": "Руль и управление",
+    "ParentCategoryId": null
+  },
+  {
+    "Id": 13,
+    "Name": "Steering - Handlebars",
+    "Description": "Рули и грипсы",
+    "ParentCategoryId": 12
+  },
+  {
+    "Id": 14,
+    "Name": "Fenders",
+    "Description": "Крылья",
+    "ParentCategoryId": null
+  },
+  {
+    "Id": 15,
+    "Name": "Carriers",
+    "Description": "Багажники и подставки",
+    "ParentCategoryId": null
+  },
+  {
+    "Id": 16,
+    "Name": "Shelters",
+    "Description": "Навесы и чехлы",
+    "ParentCategoryId": null
+  },
+  {
+    "Id": 17,
+    "Name": "Accessories",
+    "Description": "Аксессуары",
+    "ParentCategoryId": null
+  },
+  {
+    "Id": 18,
+    "Name": "Helmets",
+    "Description": "Шлемы",
+    "ParentCategoryId": null
+  },
+  {
+    "Id": 19,
+    "Name": "Gloves",
+    "Description": "Перчатки",
+    "ParentCategoryId": null
+  },
+  {
+    "Id": 20,
+    "Name": "Pedals",
+    "Description": "Педали",
+    "ParentCategoryId": null
+  }
+]

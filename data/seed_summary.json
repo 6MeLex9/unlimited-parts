@@ -1,0 +1,11 @@
+{
+  "generator": "tools/generate_seed_data.js",
+  "seed": 20240517,
+  "categories": 20,
+  "products": 43,
+  "customers": 40,
+  "orders": 120,
+  "orderItems": 301,
+  "cartLines": 12,
+  "revenueExcludingCancelled": 280970.07
+}
