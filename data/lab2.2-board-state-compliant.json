@@ -1,0 +1,346 @@
+{
+  "capturedAt": "2026-11-24",
+  "sprint": "Sprint 2",
+  "project": "https://github.com/users/6MeLex9/projects/2",
+  "comment": "Состояние до шагов 14-16 ЛР 2.2: WIP соблюдён",
+  "items": [
+    {
+      "number": 1,
+      "title": "[EPIC] Обучение продуктам",
+      "state": "OPEN",
+      "milestone": null,
+      "labels": [
+        "area: PUL-Web",
+        "type: epic"
+      ],
+      "assignees": [],
+      "boardColumn": null,
+      "status": "In Progress",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 2,
+      "title": "Осваиваем дашборды",
+      "state": "OPEN",
+      "milestone": "Sprint 2",
+      "labels": [
+        "area: PUL-Web",
+        "type: feature"
+      ],
+      "assignees": [],
+      "boardColumn": null,
+      "status": "Todo",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 3,
+      "title": "Как клиент, я хочу просмотреть новые учебники",
+      "state": "OPEN",
+      "milestone": "Sprint 2",
+      "labels": [
+        "area: PUL-Web",
+        "type: pbi",
+        "данные",
+        "ux"
+      ],
+      "assignees": [
+        "6MeLex9"
+      ],
+      "boardColumn": "Committed",
+      "status": "In Progress",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 5,
+      "swimlane": "Default",
+      "ticketId": "PUL-1042"
+    },
+    {
+      "number": 4,
+      "title": "Как клиент, я хочу видеть новинки на главной странице",
+      "state": "OPEN",
+      "milestone": "Sprint 2",
+      "labels": [
+        "area: PUL-Web",
+        "type: pbi"
+      ],
+      "assignees": [],
+      "boardColumn": "New",
+      "status": "Todo",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 3,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 5,
+      "title": "Как клиент, я хочу добавить товар в корзину",
+      "state": "OPEN",
+      "milestone": "Sprint 2",
+      "labels": [
+        "area: PUL-Web",
+        "type: pbi",
+        "priority: 1"
+      ],
+      "assignees": [],
+      "boardColumn": "Approved",
+      "status": "In Progress",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 5,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 6,
+      "title": "Карточка товара не отображает скидку",
+      "state": "OPEN",
+      "milestone": "Sprint 2",
+      "labels": [
+        "area: PUL-Web",
+        "type: bug",
+        "priority: 1",
+        "severity: 2"
+      ],
+      "assignees": [],
+      "boardColumn": "New",
+      "status": "Todo",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 1,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 7,
+      "title": "Оформление заказа",
+      "state": "OPEN",
+      "milestone": "Sprint 3",
+      "labels": [
+        "area: PUL-Web",
+        "type: feature"
+      ],
+      "assignees": [],
+      "boardColumn": null,
+      "status": "Todo",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 8,
+      "title": "Как клиент, я хочу оформить заказ",
+      "state": "OPEN",
+      "milestone": "Sprint 3",
+      "labels": [
+        "area: PUL-Web",
+        "type: pbi"
+      ],
+      "assignees": [],
+      "boardColumn": null,
+      "status": "Todo",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 9,
+      "title": "Как клиент, я хочу оплатить заказ картой",
+      "state": "OPEN",
+      "milestone": "Sprint 3",
+      "labels": [
+        "area: PUL-Web",
+        "type: pbi"
+      ],
+      "assignees": [],
+      "boardColumn": null,
+      "status": "Todo",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 10,
+      "title": "Как клиент, я хочу отслеживать статус заказа",
+      "state": "OPEN",
+      "milestone": "Sprint 3",
+      "labels": [
+        "area: PUL-Web",
+        "type: pbi"
+      ],
+      "assignees": [],
+      "boardColumn": null,
+      "status": "Todo",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 11,
+      "title": "Администрирование каталога",
+      "state": "CLOSED",
+      "milestone": "Sprint 1",
+      "labels": [
+        "area: PUL-Web",
+        "type: feature"
+      ],
+      "assignees": [],
+      "boardColumn": "Done",
+      "status": "Done",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 12,
+      "title": "Как администратор, я хочу добавить товар в каталог",
+      "state": "CLOSED",
+      "milestone": "Sprint 1",
+      "labels": [
+        "area: PUL-Web",
+        "type: pbi"
+      ],
+      "assignees": [],
+      "boardColumn": "Done",
+      "status": "Done",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 13,
+      "title": "Как администратор, я хочу скрыть снятый с продажи товар",
+      "state": "CLOSED",
+      "milestone": "Sprint 1",
+      "labels": [
+        "area: PUL-Web",
+        "type: pbi"
+      ],
+      "assignees": [],
+      "boardColumn": "Done",
+      "status": "Done",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 14,
+      "title": "Как администратор, я хочу управлять категориями каталога",
+      "state": "CLOSED",
+      "milestone": "Sprint 1",
+      "labels": [
+        "area: PUL-Web",
+        "type: pbi"
+      ],
+      "assignees": [],
+      "boardColumn": "Done",
+      "status": "Done",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 15,
+      "title": "Добавить страницу для самых последних учебников",
+      "state": "OPEN",
+      "milestone": "Sprint 2",
+      "labels": [
+        "area: PUL-Web",
+        "type: task",
+        "данные"
+      ],
+      "assignees": [
+        "6MeLex9"
+      ],
+      "boardColumn": "Committed",
+      "status": "In Progress",
+      "activity": "Development",
+      "remainingWork": 8,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 16,
+      "title": "Оптимизация запроса к данным для последних учебников",
+      "state": "OPEN",
+      "milestone": "Sprint 2",
+      "labels": [
+        "area: PUL-Web",
+        "type: task",
+        "данные",
+        "ux"
+      ],
+      "assignees": [],
+      "boardColumn": "Committed",
+      "status": "In Progress",
+      "activity": "Design",
+      "remainingWork": 3,
+      "storyPoints": 0,
+      "swimlane": "Default",
+      "ticketId": null
+    },
+    {
+      "number": 17,
+      "title": "Как клиент, я хочу видеть недавно просмотренные учебники",
+      "state": "OPEN",
+      "milestone": "Sprint 2",
+      "labels": [
+        "area: PUL-Web",
+        "type: pbi",
+        "данные"
+      ],
+      "assignees": [],
+      "boardColumn": "Approved QA",
+      "status": "In Progress",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 3,
+      "swimlane": "Ускоренная",
+      "ticketId": "PUL-1043"
+    },
+    {
+      "number": 18,
+      "title": "Как клиент, я хочу запросить новые материалы",
+      "state": "CLOSED",
+      "milestone": "Sprint 2",
+      "labels": [
+        "area: PUL-Web",
+        "type: pbi",
+        "ux"
+      ],
+      "assignees": [],
+      "boardColumn": "Done",
+      "status": "Done",
+      "activity": null,
+      "remainingWork": 0,
+      "storyPoints": 2,
+      "swimlane": "Default",
+      "ticketId": null
+    }
+  ]
+}

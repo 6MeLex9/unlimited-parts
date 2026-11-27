@@ -1,8 +1,14 @@
-# Отчёт: ЛР 2.1 — Гибкое планирование и управление портфелем
+# Отчёт: ЛР 2.1 — Планирование в Azure DevOps (Задачи 1–3)
 
-> Тема 2.1 «Планирование в Azure DevOps». По разрешению преподавателя выполнено
-> в **GitHub**; соответствие инструментов — в [`azure-vs-github.md`](azure-vs-github.md),
-> пошаговый разбор — в [`lab2.1-guide.md`](lab2.1-guide.md).
+> Темы 2.0–2.2 исходно выполняются в Azure DevOps. По разрешению преподавателя
+> работа выполнена в **GitHub**; соответствие инструментов —
+> [`azure-vs-github.md`](azure-vs-github.md).
+>
+> **ЛР 2.0** — подготовка тестовых данных: [`report.md`](report.md).
+> **ЛР 2.1** (этот отчёт) — Задачи 1–3: команда, области и итерации, рабочие
+> элементы, планирование спринта и ёмкость.
+> **ЛР 2.2** — Задачи 4–6: канбан-доска, панели мониторинга, процесс:
+> [`lab2.2-report.md`](lab2.2-report.md).
 
 **Окружение**
 
@@ -12,159 +18,113 @@
 | Доска (`Unlimited Parts Board`) | https://github.com/users/6MeLex9/projects/2 |
 | Epic «Обучение продуктам» | https://github.com/6MeLex9/unlimited-parts/issues/1 |
 | Feature «Осваиваем дашборды» | https://github.com/6MeLex9/unlimited-parts/issues/2 |
-| PBI с учебниками (первый PBI) | https://github.com/6MeLex9/unlimited-parts/issues/3 |
+| Первый PBI (учебники) | https://github.com/6MeLex9/unlimited-parts/issues/3 |
 | Задачи спринта | https://github.com/6MeLex9/unlimited-parts/issues/15 · .../16 |
-| Sprint 2 | https://github.com/6MeLex9/unlimited-parts/milestone/2 |
+| Sprint 2 (текущая итерация) | https://github.com/6MeLex9/unlimited-parts/milestone/2 |
 
-## 1. Постановка
+## Задача 1: команда `PUL-Web`, области и итерации
 
-Отработать полный цикл гибкого планирования Scrum: команда и её область,
-итерации, создание иерархии рабочих элементов (Epic → Feature → PBI → Task),
-состояния на доске, планирование спринта и ёмкости (capacity), настройка
-канбан-доски (WIP, дорожки, Definition of Done), панели мониторинга и
-наследуемый процесс с дополнительным полем.
+| Шаги методички | Реализация в GitHub |
+| --- | --- |
+| 1–7. Проект Parts Unlimited из шаблона | репозиторий + манифест шаблона `data/demo-generator/parts-unlimited.json` (выполнено в ЛР 2.0) |
+| 3–4. Новая команда `PUL-Web` | метка `area: PUL-Web` — фильтр по команде (в GitHub нет сущности «команда» на уровне личного аккаунта) |
+| 6. Members | `Assignees` в Issues/Project |
+| 7–8. Iterations → `Sprint 1` | Milestone **Sprint 1** — закрыт, «спринт уже пройден» (4/4 элемента) |
+| 9. Добавить Sprint 2 и Sprint 3 | Milestone **Sprint 2** — текущий; **Sprint 3** — ближайший будущий |
+| 10–11. Areas → Include Sub Areas | метка области у всех элементов + вложенность Sub-issues: команда видит работы всех уровней |
 
-## 2. Команда, область, итерации (задача 1)
+Спринты двухнедельные: `Sprint 1` (завершён), `Sprint 2` (идёт), `Sprint 3`
+(запланирован) — см. `Milestones` репозитория.
 
-| Azure | GitHub | Итог |
-| --- | --- | --- |
-| Team `PUL-Web` | метка `area: PUL-Web` | у всех 18 элементов |
-| Iterations | Milestones | `Sprint 1` (прошедший, 4/4 закрыто), `Sprint 2` (текущий), `Sprint 3` (будущий) |
-| Areas + Include Sub Areas | метка области + вложенность Sub-issues | область видна всем элементам |
+## Задача 2: рабочие элементы
 
-## 3. Рабочие элементы (задача 2)
-
-Создана иерархия, эквивалентная Azure:
+Создано **18** рабочих элементов; иерархия — нативные **Sub-issues** +
+упоминание `Part of #N` в теле:
 
 ```
 #1 Epic «Обучение продуктам»
 ├── #2 Feature «Осваиваем дашборды»
 │   ├── #3  PBI  Как клиент, я хочу просмотреть новые учебники
-│   │   ├── #15 Task Добавить страницу для самых последних учебников  (8 ч, Development)
-│   │   └── #16 Task Оптимизация запроса к данным                     (3 ч, Design)
+│   │   ├── #15 Task Добавить страницу для самых последних учебников
+│   │   └── #16 Task Оптимизация запроса к данным для последних учебников
 │   ├── #4  PBI  … видеть новинки на главной странице
 │   ├── #5  PBI  … добавить товар в корзину
 │   ├── #6  Bug  Карточка товара не отображает скидку
-│   ├── #17 PBI  … видеть недавно просмотренные учебники (Approved QA, «Ускоренная»)
-│   └── #18 PBI  … запросить новые материалы (Done)
-├── #7 Feature «Оформление заказа» …
-└── #11 Feature «Администрирование каталога» (Sprint 1, закрыт)
+│   └── #17 PBI  … видеть недавно просмотренные учебники
+├── #7 Feature «Оформление заказа» → #8, #9, #10
+└── #11 Feature «Администрирование каталога» → #12, #13, #14 (Sprint 1, закрыты)
 ```
 
-Всего 18 рабочих элементов; связи — и нативными **Sub-issues**, и упоминанием
-`Part of #N` в теле.
-
-### Состояния на доске (эквивалент New/Approved/Committed/Approved QA/Done)
-
-| Элемент | Board Column | Status | Activity | Remaining Work | Swimlane |
-| --- | --- | --- | --- | --- | --- |
-| #15 задача | Committed | In Progress | Development | **8** | Default |
-| #16 задача | Committed | In Progress | Design | 3 | Default |
-| #17 PBI | **Approved QA** | In Progress | — | — | **Ускоренная** |
-| #18 PBI | Done | Done | — | — | Default |
-| #3 PBI | Committed | In Progress | — | — | Default |
-| #5 PBI | Approved | In Progress | — | — | Default |
-| #4, #6 | New | Todo | — | — | Default |
-
-## 4. Планирование спринта и ёмкость (задача 3)
-
-Емкость: **1 ч в день × 8 рабочих дней = 8 ч**; отпуск 5 рабочих дней
-(`daysOff: 5`).
-
-| Шаг методички | Значение |
+| Шаги | Реализация |
 | --- | --- |
-| 3. две задачи, 8 ч | #16 (3 ч) + #15 (5 ч) |
-| 4. назначить себе | `Assignees` у #15 |
-| 5. capacity 1 ч/день | `capacity.perDayHours = 1` |
-| 6–7. отпуск 5 дней | `daysOff = 5` |
-| 11. Remaining 5 → 8 | #15 `Remaining Work = 8` |
-| 12. превышение | 11 ч > 8 ч ёмкости, лишние **3 ч** |
+| 3. Epic «Обучение продуктам» | Issue **#1**, метка `type: epic`, автор назначен |
+| 4. Area = PUL-Web, Iteration = Sprint 2 | метка `area: PUL-Web` + Milestone Sprint 2 |
+| 7–9. Related Work → Feature «Осваиваем дашборды» | Issue **#2** — Sub-issue эпика, наследует область и итерацию |
+| 12–14. Feature → Backlog items | **#3** «Как клиент, я хочу просмотреть новые учебники» (исходная user story методички) |
+| 15. ещё два PBI | **#17** «…недавно просмотренные учебники», **#18** «…запросить новые материалы» |
+| 23–25. Задачи с Remaining Work и Activity | **#15** — 5 ч, Development; **#16** — 3 ч, Design |
 
-Проверка скриптом `scripts/check_wip.ps1`:
+Состояния (поле `Board Column` проекта) после шагов 17–21:
+
+| Элемент | Board Column |
+| --- | --- |
+| #5 | Approved |
+| #3, #15, #16 | Committed |
+| #18 | Done |
+| #4, #6 | New |
+
+## Задача 3: спринты и ёмкость
+
+Емкость: **1 ч в день × 8 рабочих дней = 8 ч**; отпуск 5 рабочих дней.
+
+| Шаг | Реализация |
+| --- | --- |
+| 2. Work details | вид **Taskboard** + поле `Remaining Work` |
+| 3. две задачи, 8 ч | #15 (5 ч) + #16 (3 ч) |
+| 4. назначить себе | `Assignees = 6MeLex9` у #15 |
+| 5. capacity 1 ч/день | `capacity.perDayHours = 1` в `data/demo-generator/board-config.json` |
+| 6–7. отпуск 5 дней | `daysOff = 5` |
+| 8. Save | значения зафиксированы в проекте |
+| 11. Remaining 5 → 8 | #15 → `Remaining Work = 8` |
+| 12. превышение | 8 ч (назначено) + 3 ч (свободная задача) = 11 ч > 8 ч, лишние **3 ч** |
+| 13. перенос в др. спринт — не выполнять | элемент оставлен в Sprint 2 (как требует методичка) |
+| 15–16. View → People | Taskboard с группировкой по `Assignees` |
+| 17–24. Styles → «Разработка», зелёный | `Activity = Development` + правило стиля в `board-config.json` (подробнее — в отчёте 2.2, Задача 4) |
+| 20. Backlog levels (Epic) | уровни Epic → Feature → PBI → Task; эпик не скрыт |
+| 21. рабочие дни | `workingDays: [1,2,3,4,5]` |
+| 22. Working with bugs | дефект **#6** с меткой `type: bug` |
+
+Проверка `scripts/check_wip.ps1` (снимок `data/lab2.2-board-state-compliant.json`):
 
 ```
-[OK] колонка 'Approved QA': 1/1
 Ёмкость спринта: 1 ч в день × 8 рабочих дн = 8 ч (из них 5 дн отпуск)
 Оставшаяся работа у назначенных: 8 ч; всего в спринте: 11 ч
 Превышение ёмкости команды (лишние 3 ч).
-Лимиты WIP соблюдены; превышение ёмкости зафиксировано (как в методичке, шаг 12).
 ```
 
-## 5. Канбан-доска (задача 4)
-
-| Настройка Azure | Реализация в GitHub |
-| --- | --- |
-| Tag colors → «данные» (жёлтый) | метка `данные` на #15, #16, #17 |
-| Теги «данные» + «ux/ui» | `данные`, `ux` у #3, #16, #17, #18 |
-| Колонка «Approved QA» + WIP = 1 | `Board Column → Approved QA` с лимитом 1 |
-| Превышение WIP (красный) | проверка `scripts/check_wip.ps1` → exit 1 |
-| Разделение колонки (Doing/Done) | `"split": true` |
-| Definition of Done | «Проходит **все** тесты и ревью» |
-| Swimlane «Ускоренная» | поле `Swimlane → Ускоренная` у #17 |
-
-Подробности — [`lab2.1-board-rules.md`](lab2.1-board-rules.md).
-
-## 6. Панели мониторинга и запросы (задача 5)
-
-| Azure | GitHub |
-| --- | --- |
-| Панель «Обучение продукту» | набор сохранённых фильтров-плиток |
-| Виджет Sprint Overview (Efforts) | Milestone Sprint 2 + поле `Story Points` |
-| Виджет Sprint Capacity | поле `Remaining Work` по исполнителям |
-| Термины запроса (Task, Area PUL-Web) | `label:"type: task" label:"area: PUL-Web"` |
-| Диаграмма по «Assigned To» | группировка по `Assignees` |
-
-Ссылки и фильтры — в [`lab2.1-dashboards.md`](lab2.1-dashboards.md).
-
-> Ограничение: диаграммы Project v2 (Insights) создаются только интерактивно —
-> у GitHub API нет мутации для графиков. Поэтому в отчёте приведены точные
-> фильтры и шаги, а не сгенерированное изображение.
-
-## 7. Процесс и поле PUL Ticket ID (задача 6)
-
-Создано поле проекта **`PUL Ticket ID`** (аналог поля в унаследованном процессе
-«Мой Scrum»), заполнено:
-
-| Элемент | Ticket ID |
-| --- | --- |
-| #3 «…просмотреть новые учебники» (первый PBI) | `PUL-1042` |
-| #17 «…недавно просмотренные учебники» | `PUL-1043` |
-
-Поля процесса (`Activity`, `Board Column`, `Swimlane`, `Remaining Work`,
-`Story Points`) заданы в манифесте `data/demo-generator/lab2.1-board.json` и
-создаются в проекте скриптами provisioning. Детали — [`lab2.1-process.md`](lab2.1-process.md).
-
-## 8. Воспроизводимость
+## Воспроизводимость
 
 ```powershell
-# 1. рабочие элементы 2.1 (задачи, PBI, связи)
-node tools/create_lab2_1_items.js
-
-# 2. поля и значения доски
-node tools/configure_lab2_1_board.js
-
-# 3. проверка WIP и ёмкости
-./scripts/check_wip.ps1
+node tools/lab21/create_items.js      # задачи и PBI, связи Sub-issues
+node tools/lab21/configure_board.js   # поля проекта и виды
+node tools/lab21/fill_values.js       # состояния, activity, remaining work
+./scripts/check_wip.ps1 -StateFile data/lab2.2-board-state-compliant.json
 ```
 
-## 9. Выводы
+## Выводы по 2.1
 
-1. В GitHub роль доски Azure выполняет Projects v2: **колонки** моделируются
-   полем `Board Column`, **дорожки** — полем `Swimlane`, **activity / Remaining
-   Work / Story Points** — отдельными полями проекта.
-2. Состояния `New → Approved → Committed → Approved QA → Done` воспроизводятся
-   один в один; WIP-лимит не встроен, поэтому реализован проверкой
-   (`check_wip.ps1`) с тем же смыслом, что красная подсветка в Azure.
-3. Планирование спринта по ёмкости (1 ч × 8 дн, отпуск 5 дн) воспроизведено
-   полностью и проверяемо: превышение на 3 ч видно и в отчёте, и в скрипте.
-4. Поле «PUL Ticket ID» показало, как в GitHub расширять «процесс»: аналог
-   унаследованного процесса — манифест + поля проекта, создаваемые API.
+1. Итерации и области Azure в GitHub воспроизводятся парой
+   **Milestone + метка области**; иерархия — Sub-issues.
+2. `Remaining Work` и `Activity` не существуют в Issues, поэтому заведены как
+   поля Project v2 — это ближайший аналог полей процесса Scrum.
+3. Планирование по ёмкости воспроизведено точно: 8 ч доступно, 11 ч работы,
+   превышение 3 ч — числа совпадают с методичкой.
 
-## 10. Что сдавать
+## Что сдавать по 2.1
 
-- [ ] Доска https://github.com/users/6MeLex9/projects/2 — колонки и дорожки
-- [ ] Issue #3 — тело с двумя Sub-issues (задачи #15, #16)
-- [ ] Поле `Remaining Work` = 8 у #15, `Activity` = Development/Design
-- [ ] Метка `данные` на карточках #15, #16, #17
-- [ ] Поле `PUL Ticket ID` = `PUL-1042` у #3
-- [ ] Вывод `./scripts/check_wip.ps1`
+- [ ] Доска: колонки `New / Approved / Committed / Approved QA / Done`
+- [ ] Issue #1 → Sub-issues #2, #7, #11; Issue #2 → #3, #4, #5, #6, #17, #18
+- [ ] Issue #3 → Sub-issues #15, #16
+- [ ] Поле `Remaining Work`: #15 = 8, #16 = 3
+- [ ] Milestones: Sprint 1 (закрыт), Sprint 2 (текущий), Sprint 3
+- [ ] Вывод `check_wip.ps1` с превышением ёмкости на 3 ч

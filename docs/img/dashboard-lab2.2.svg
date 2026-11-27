@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1100" height="660" fill="#f6f8fa"/>
+<text x="32" y="46" font-size="26" font-weight="600" fill="#24292f">Обучение продукту — панель мониторинга</text>
+<text x="32" y="72" font-size="14" fill="#57606a">Аналог Azure Dashboards для команды PUL-Web · Sprint 2 · сгенерировано tools/lab22/generate_dashboard.js</text>
+<rect x="32" y="96" width="500" height="250" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+<text x="50" y="126" font-size="16" font-weight="600" fill="#24292f">Обзор спринта — по оценкам (Efforts)</text>
+<text x="50" y="146" font-size="12" fill="#57606a">Рабочих элементов: 9 · сумма Story Points: 19</text>
+<text x="50" y="180" font-size="12" fill="#24292f">New</text>
+<rect x="162" y="166" width="200" height="20" rx="3" fill="#2da44e"/>
+<text x="370" y="180" font-size="12" fill="#57606a">4 SP · 2 эл.</text>
+<text x="50" y="212" font-size="12" fill="#24292f">Approved</text>
+<rect x="162" y="198" width="250" height="20" rx="3" fill="#2da44e"/>
+<text x="420" y="212" font-size="12" fill="#57606a">5 SP · 1 эл.</text>
+<text x="50" y="244" font-size="12" fill="#24292f">Committed</text>
+<rect x="162" y="230" width="250" height="20" rx="3" fill="#2da44e"/>
+<text x="420" y="244" font-size="12" fill="#57606a">5 SP · 3 эл.</text>
+<text x="50" y="276" font-size="12" fill="#24292f">Approved QA</text>
+<rect x="162" y="262" width="250" height="20" rx="3" fill="#cf222e"/>
+<text x="420" y="276" font-size="12" fill="#57606a">5 SP · 2 эл. · WIP 1</text>
+<text x="50" y="308" font-size="12" fill="#24292f">Done</text>
+<rect x="162" y="294" width="2" height="20" rx="3" fill="#2da44e"/>
+<text x="172" y="308" font-size="12" fill="#57606a">0 SP · 0 эл.</text>
+<text x="50" y="332" font-size="11" fill="#57606a">Красный — превышен WIP-лимит колонки</text>
+<rect x="556" y="96" width="512" height="250" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+<text x="574" y="126" font-size="16" font-weight="600" fill="#24292f">Ёмкость спринта (Capacity)</text>
+<text x="574" y="146" font-size="12" fill="#57606a">1 ч/день × 8 раб. дн = 8 ч · отпуск 5 дн</text>
+<text x="574" y="192" font-size="12" fill="#24292f">Доступно</text>
+<rect x="706" y="176" width="218" height="22" rx="3" fill="#2da44e"/>
+<text x="932" y="192" font-size="12" font-weight="600" fill="#57606a">8 ч</text>
+<text x="574" y="238" font-size="12" fill="#24292f">Назначено</text>
+<rect x="706" y="222" width="218" height="22" rx="3" fill="#0969da"/>
+<text x="932" y="238" font-size="12" font-weight="600" fill="#57606a">8 ч</text>
+<text x="574" y="284" font-size="12" fill="#24292f">Всего в спринте</text>
+<rect x="706" y="268" width="300" height="22" rx="3" fill="#cf222e"/>
+<text x="1014" y="284" font-size="12" font-weight="600" fill="#57606a">11 ч</text>
+<text x="574" y="330" font-size="12" fill="#cf222e">Превышение ёмкости команды: 3 ч</text>
+<rect x="32" y="366" width="1036" height="262" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+<text x="50" y="396" font-size="16" font-weight="600" fill="#24292f">Веб-задачи — по назначению</text>
+<text x="50" y="416" font-size="12" fill="#57606a">Запрос: label:"type: task" label:"area: PUL-Web" · группировка по Assigned To</text>
+<text x="50" y="457" font-size="12" fill="#24292f">Не назначено</text>
+<rect x="232" y="442" width="420" height="20" rx="3" fill="#8250df"/>
+<text x="660" y="457" font-size="12" fill="#57606a">7</text>
+<text x="50" y="487" font-size="12" fill="#24292f">6MeLex9</text>
+<rect x="232" y="472" width="120" height="20" rx="3" fill="#8250df"/>
+<text x="360" y="487" font-size="12" fill="#57606a">2</text>
+</svg>

@@ -18,7 +18,8 @@
 param(
     [string]$Owner = "6MeLex9",
     [int]$ProjectNumber = 2,
-    [string]$Manifest = "data/demo-generator/lab2.1-board.json"
+    [string]$StateFile = "data/lab2.2-board-state.json",
+    [string]$Manifest = "data/demo-generator/board-config.json"
 )
 
 $ErrorActionPreference = "Stop"
@@ -33,9 +34,9 @@ if (-not $columns.Count) {
     exit 0
 }
 
-$stateFile = Join-Path $root "data/lab2.1-board-state.json"
+$stateFile = if ([IO.Path]::IsPathRooted($StateFile)) { $StateFile } else { Join-Path $root $StateFile }
 if (-not (Test-Path $stateFile)) {
-    throw "Нет снимка доски: $stateFile. Создайте его скриптом (см. docs/lab2.1-board-rules.md)."
+    throw "Нет снимка доски: $stateFile. Создайте его скриптом (см. docs/lab2.2-kanban.md)."
 }
 $state = Get-Content $stateFile -Raw -Encoding UTF8 | ConvertFrom-Json
 
@@ -54,7 +55,7 @@ foreach ($col in $columns.Keys) {
 
 # Ёмкость спринта
 $cap = $spec.boardRules.capacity
-$assigned = ($state.items | Where-Object { $_.assigned -and $_.remainingWork -gt 0 } | Measure-Object -Property remainingWork -Sum).Sum
+$assigned = ($state.items | Where-Object { (($_.assignees | Measure-Object).Count -gt 0) -or $_.assigned -eq $true } | Where-Object { $_.remainingWork -gt 0 } | Measure-Object -Property remainingWork -Sum).Sum
 $total = ($state.items | Where-Object { $_.remainingWork -gt 0 } | Measure-Object -Property remainingWork -Sum).Sum
 $available = $cap.perDayHours * $cap.sprintDays
 Write-Host ""

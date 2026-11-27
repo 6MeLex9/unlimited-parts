@@ -1,0 +1,54 @@
+{
+  "$comment": "Конфигурация доски командного проекта Unlimited Parts: колонки, WIP, дорожки, стили, теги, ёмкость. Используется ЛР 2.1 (ёмкость, итерации) и ЛР 2.2 (колонки, WIP, дорожки).",
+  "boardRules": {
+    "columns": [
+      { "name": "New", "status": "Todo", "wipLimit": null },
+      { "name": "Approved", "status": "Todo", "wipLimit": null },
+      { "name": "Committed", "status": "In Progress", "wipLimit": null },
+      {
+        "name": "Approved QA",
+        "status": "In Progress",
+        "wipLimit": 1,
+        "split": true,
+        "splitColumns": ["Doing", "Done"],
+        "definitionOfDone": "Проходит **все** тесты и ревью"
+      },
+      { "name": "Done", "status": "Done", "wipLimit": null }
+    ],
+    "swimlanes": [
+      { "name": "Default", "description": "Обычный поток работ" },
+      { "name": "Ускоренная", "description": "Приоритетная дорожка: работа не должна застревать" }
+    ],
+    "styles": [
+      { "name": "Разработка", "color": "green", "criteria": "Activity = Development", "label": "type: task" },
+      { "name": "Дефект", "color": "red", "criteria": "Type = Bug", "label": "type: bug" }
+    ],
+    "tagColors": [
+      { "tag": "данные", "color": "yellow" },
+      { "tag": "ux", "color": "blue" }
+    ],
+    "annotations": ["Tasks", "Tests"],
+    "backlogLevels": ["Epic", "Feature", "PBI", "Task"],
+    "workingDays": [1, 2, 3, 4, 5],
+    "workingWithBugs": "bugs appear on the board as cards with the type: bug label",
+    "capacity": { "perDayHours": 1, "sprintDays": 8, "daysOff": 5, "totalHours": 8 }
+  },
+  "process": {
+    "baseProcess": "Scrum",
+    "inheritedProcessName": "Мой Scrum",
+    "field": {
+      "name": "PUL Ticket ID",
+      "label": "Ticket ID",
+      "group": "PartsUnlimitedGroup",
+      "targetWorkItemType": "Product Backlog Item"
+    }
+  },
+  "queries": [
+    {
+      "name": "Веб-задачи",
+      "folder": "Shared Queries",
+      "filter": "label:\"type: task\" label:\"area: PUL-Web\"",
+      "chart": { "name": "Веб-задачи - по назначению", "groupBy": "assignee" }
+    }
+  ]
+}

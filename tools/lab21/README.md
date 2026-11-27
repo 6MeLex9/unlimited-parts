@@ -29,8 +29,8 @@ $env:GH_TOKEN = "<classic PAT: repo + project>"
 ./scripts/check_wip.ps1
 ```
 
-Скрипт читает `data/demo-generator/lab2.1-board.json` и снимок
-`data/lab2.1-board-state.json`, проверяет WIP-лимит колонки «Approved QA» и
+Скрипт читает `data/demo-generator/board-config.json` и снимок
+`data/lab2.2-board-state.json`, проверяет WIP-лимит колонки «Approved QA» и
 ёмкость спринта (`1 ч × 8 дн = 8 ч`, отпуск 5 дн), воспроизводя проверку из
 шагов 5–12 методички.
 

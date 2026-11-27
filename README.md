@@ -3,12 +3,21 @@
 Репозиторий содержит «тестовое окружение» для лабораторных работ по программной инженерии:
 набор данных магазина автозапчастей **Parts Unlimited** (продукты, категории, заказы, корзина)
 и рабочую область гибкого планирования в **GitHub** — Issues, Sub-issues, Labels,
-Milestones (спринты) и доска **Projects**.
+Milestones (спринты), доска **Projects** и панель мониторинга.
 
-> Исходная методичка предполагает Azure DevOps + *Azure DevOps Services Demo Generator*
+> Исходные методички предполагают Azure DevOps + *Azure DevOps Services Demo Generator*
 > (шаблон `Parts Unlimited`). В этом репозитории Azure заменён на GitHub:
 > `Organization/Project` → репозиторий, `Area Path` → Labels, `Iteration` → Milestones,
-> `Epic/Feature/PBI/Task` → Issue + Sub-issues.
+> `Epic/Feature/PBI/Task` → Issue + Sub-issues, `Boards` → Project v2,
+> `Dashboard` → сгенерированная панель, `Process` → конфигурация + поля проекта.
+
+## Лабораторные работы
+
+| ЛР | Тема | Отчёт |
+| --- | --- | --- |
+| **2.0** | Подготовка тестовых данных (Demo Generator) | [`docs/report.md`](docs/report.md) |
+| **2.1** | Планирование: команда, области, итерации, рабочие элементы, спринт и ёмкость (Задачи 1–3) | [`отчёт`](docs/lab2.1-report.md) · [`пошагово`](docs/lab2.1-guide.md) |
+| **2.2** | Канбан-доска, панели мониторинга, процесс (Задачи 4–6) | [`отчёт`](docs/lab2.2-report.md) · [`пошагово`](docs/lab2.2-guide.md) · [`канбан`](docs/lab2.2-kanban.md) · [`панель`](docs/lab2.2-dashboard.md) · [`запросы`](docs/lab2.2-queries.md) · [`процесс`](docs/lab2.2-process.md) |
 
 ## Что внутри
 
@@ -19,45 +28,42 @@ Milestones (спринты) и доска **Projects**.
 | `data/Customer.json` | Клиенты |
 | `data/Order*.json`, `data/Cart.json` | Заказы, позиции заказов, корзина |
 | `data/sql/*.sql` | Те же данные в виде DDL/INSERT для SQL Server / SQLite |
-| `data/workitems/*.md` | Готовые тексты рабочих элементов (Epic → Feature → PBI → Bug) |
-| `data/demo-generator/` | Аналог манифеста Azure DevOps Demo Generator (`parts-unlimited.json`), правила доски ЛР 2.1 (`lab2.1-board.json`) |
-| `tools/lab21/` | Автоматизация ЛР 2.1: задачи, поля доски, состояние, поле `PUL Ticket ID` |
+| `data/workitems/` | Тексты рабочих элементов (Epic → Feature → PBI → Task → Bug) |
+| `data/demo-generator/parts-unlimited.json` | Манифест шаблона (аналог Demo Generator) |
+| `data/demo-generator/board-config.json` | Конфигурация доски: колонки, WIP, дорожки, стили, теги, ёмкость, процесс |
+| `data/lab2.2-board-state*.json` | Снимки доски «до» и «после» перемещений (для проверки WIP) |
+| `tools/lab21/` | Автоматизация ЛР 2.1: задачи, поля доски, значения |
+| `tools/lab22/generate_dashboard.js` | Генератор панели мониторинга (SVG + markdown) |
 | `scripts/check_wip.ps1` | Проверка WIP-лимита «Approved QA» и ёмкости спринта |
-| `docs/` | Отчёты по работам, карта соответствия Azure → GitHub |
+| `scripts/provision_github.ps1` | Развёртывание рабочей области в новом репозитории |
 | `src/` | Минимальная модель данных (C#), совпадающая со схемой JSON/SQL |
 
-## Быстрый старт (как в демо-генераторе, только без Azure)
+## Быстрый старт
 
 ```powershell
-# 1. Проверить, что данные валидны
-python tools/validate_data.py
+# 1. Проверить тестовые данные
+node tools/validate_data.js
 
-# 2. Посмотреть доску и спринты
-#    Projects → Unlimited Parts Board
-#    Issues → Milestones → Sprint 2
+# 2. Проверить WIP и ёмкость спринта
+./scripts/check_wip.ps1
+
+# 3. Пересобрать панель мониторинга
+node tools/lab22/generate_dashboard.js
 ```
 
 ## Рабочая область планирования
 
 | Что | Где |
 | --- | --- |
-| Доска (Эпики / Features / PBIs) | Tab **Projects** → `Unlimited Parts Board` |
+| Доска | Tab **Projects** → [`Unlimited Parts Board`](https://github.com/users/6MeLex9/projects/2) |
 | Спринты | **Milestones**: `Sprint 1`, `Sprint 2`, `Sprint 3` |
 | Область (аналог Area Path) | Label `area: PUL-Web` |
-| Типы рабочих элементов | Labels `type: epic`, `type: feature`, `type: pbi`, `type: bug` |
+| Типы рабочих элементов | Labels `type: epic`, `type: feature`, `type: pbi`, `type: task`, `type: bug` |
+| Теги доски | Labels `данные` (жёлтый), `ux` (синий) |
 | Иерархия | **Sub-issues** эпик → feature → PBI → task |
-| Поля доски ЛР 2.1 | `Board Column`, `Swimlane`, `Activity`, `Remaining Work`, `Story Points`, `PUL Ticket ID` |
+| Поля доски | `Board Column`, `Swimlane`, `Activity`, `Remaining Work`, `Story Points`, `PUL Ticket ID` |
 
-## Лабораторные работы
-
-| ЛР | Тема | Отчёт |
-| --- | --- | --- |
-| 2.0 | Подготовка тестовых данных | [`docs/report.md`](docs/report.md) |
-| 2.1 | Гибкое планирование и управление портфелем | [`docs/lab2.1-report.md`](docs/lab2.1-report.md) · [`guide`](docs/lab2.1-guide.md) · [`board rules`](docs/lab2.1-board-rules.md) · [`dashboards`](docs/lab2.1-dashboards.md) · [`process`](docs/lab2.1-process.md) |
-
-## Отчёт
-
-Полный отчёт по лабораторной работе: [`docs/report.md`](docs/report.md).
+Колонки доски: `New → Approved → Committed → Approved QA (WIP = 1) → Done`.
 
 ## Лицензия
 
